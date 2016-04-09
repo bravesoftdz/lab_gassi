@@ -1,0 +1,384 @@
+object FgassicMain: TFgassicMain
+  Left = 327
+  Height = 665
+  Top = 130
+  Width = 858
+  Caption = 'GASSIC - Graphic Assi Control'
+  ClientHeight = 665
+  ClientWidth = 858
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.1'
+  object pnlTop: TPanel
+    Left = 0
+    Height = 104
+    Top = 0
+    Width = 858
+    Align = alTop
+    ClientHeight = 104
+    ClientWidth = 858
+    TabOrder = 0
+    object PageControl1: TPageControl
+      Left = 1
+      Height = 102
+      Top = 1
+      Width = 856
+      ActivePage = TabSheet1
+      Align = alClient
+      TabIndex = 0
+      TabOrder = 0
+      object TabSheet1: TTabSheet
+        Caption = 'Главная'
+        ClientHeight = 74
+        ClientWidth = 848
+        object btnEllipse: TButton
+          Left = 171
+          Height = 25
+          Top = 7
+          Width = 91
+          Caption = 'Эллипс'
+          OnClick = btnEllipseClick
+          TabOrder = 0
+        end
+        object btnDeselectAll: TButton
+          Left = 3
+          Height = 25
+          Top = 7
+          Width = 104
+          Cancel = True
+          Caption = 'Отмена выбора'
+          OnClick = btnDeselectAllClick
+          TabOrder = 1
+        end
+        object btnPoint: TButton
+          Left = 171
+          Height = 25
+          Top = 39
+          Width = 91
+          Caption = 'Точка'
+          OnClick = btnPointClick
+          TabOrder = 2
+        end
+        object btnCircle: TButton
+          Left = 267
+          Height = 25
+          Top = 7
+          Width = 88
+          Caption = 'Круг'
+          OnClick = btnCircleClick
+          TabOrder = 3
+        end
+        object btnLine: TButton
+          Left = 267
+          Height = 25
+          Top = 39
+          Width = 88
+          Caption = 'Линия'
+          OnClick = btnLineClick
+          TabOrder = 4
+        end
+        object btnArc: TButton
+          Left = 363
+          Height = 25
+          Top = 7
+          Width = 88
+          Caption = 'Дуга'
+          OnClick = btnArcClick
+          TabOrder = 5
+        end
+        object btnPolyline: TButton
+          Left = 363
+          Height = 25
+          Top = 39
+          Width = 88
+          Caption = 'Полилиния'
+          OnClick = btnPolylineClick
+          TabOrder = 6
+        end
+        object cbColorSelect: TComboBox
+          Left = 547
+          Height = 23
+          Top = 7
+          Width = 120
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'ByBlock'
+            'ByLayer'
+            'Red'
+            'Yellow'
+            'Green'
+            'gaCyan'
+            'Blue'
+            'Magenta'
+            'White'
+          )
+          OnChange = cbColorSelectChange
+          Style = csDropDownList
+          TabOrder = 7
+          Text = 'ByLayer'
+        end
+        object cbLineWeight: TComboBox
+          Left = 547
+          Height = 23
+          Top = 39
+          Width = 120
+          ItemHeight = 15
+          ItemIndex = 1
+          Items.Strings = (
+            'Default'
+            'ByLayer'
+            'ByBlock'
+            '0,00'
+            '0,05'
+            '0,09'
+            '0,13'
+            '0,15'
+            '0,18'
+            '0,20'
+            '0,25'
+            '0,30'
+            '0,35'
+            '0,40'
+            '0,50'
+            '0,53'
+            '0,60'
+            '0,70'
+            '0,80'
+            '0,90'
+            '1,00'
+            '1,06'
+            '1,20'
+            '1,40'
+            '1,58'
+            '2,00'
+            '2,11 '
+          )
+          OnChange = cbLineWeightChange
+          Style = csDropDownList
+          TabOrder = 8
+          Text = 'ByLayer'
+        end
+        object btnText: TButton
+          Left = 459
+          Height = 25
+          Top = 7
+          Width = 75
+          Caption = 'Текст'
+          OnClick = btnTextClick
+          TabOrder = 9
+        end
+        object btnAddFrame: TButton
+          Left = 691
+          Height = 25
+          Top = 7
+          Width = 75
+          Caption = 'btnAddFrame'
+          OnClick = btnAddFrameClick
+          TabOrder = 10
+        end
+        object btnClearFrame: TButton
+          Left = 691
+          Height = 25
+          Top = 39
+          Width = 75
+          Caption = 'btnClearFrame'
+          OnClick = btnClearFrameClick
+          TabOrder = 11
+        end
+      end
+      object TabSheet2: TTabSheet
+        Caption = 'Вид'
+        ClientHeight = 74
+        ClientWidth = 848
+        object btnZoomToFit: TButton
+          Left = 3
+          Height = 25
+          Top = 7
+          Width = 96
+          Caption = 'Показать все'
+          OnClick = btnZoomToFitClick
+          TabOrder = 0
+        end
+        object cbDevMode: TCheckBox
+          Left = 129
+          Height = 19
+          Top = 13
+          Width = 161
+          Caption = 'Отладочная информация'
+          Checked = True
+          OnChange = cbDevModeChange
+          State = cbChecked
+          TabOrder = 1
+        end
+        object cbAxes: TCheckBox
+          Left = 129
+          Height = 19
+          Top = 31
+          Width = 170
+          Caption = 'Показывать нулевую точку'
+          Checked = True
+          OnChange = cbAxesChange
+          State = cbChecked
+          TabOrder = 2
+        end
+        object cbReadOnly: TCheckBox
+          Left = 129
+          Height = 19
+          Top = 47
+          Width = 101
+          Caption = 'Только чтение'
+          OnChange = cbReadOnlyChange
+          TabOrder = 3
+        end
+      end
+      object TabSheet3: TTabSheet
+        Caption = 'Блоки'
+        ClientHeight = 74
+        ClientWidth = 848
+        object btnBlockInsert: TButton
+          Left = 91
+          Height = 25
+          Top = 7
+          Width = 75
+          Caption = 'Вставить'
+          OnClick = btnBlockInsertClick
+          TabOrder = 0
+        end
+        object btnBlockCreate: TButton
+          Left = 3
+          Height = 25
+          Top = 7
+          Width = 75
+          Caption = 'Создать'
+          OnClick = btnBlockCreateClick
+          TabOrder = 1
+        end
+        object edtscale: TEdit
+          Left = 179
+          Height = 23
+          Hint = 'Scale'
+          Top = 9
+          Width = 80
+          OnKeyPress = edtscaleKeyPress
+          TabOrder = 2
+          Text = '1'
+        end
+        object btnBlockCreate1: TButton
+          Left = 3
+          Height = 25
+          Top = 39
+          Width = 75
+          Caption = 'Создать'
+          OnClick = btnBlockCreate1Click
+          TabOrder = 3
+        end
+        object btnBlockInsert1: TButton
+          Left = 91
+          Height = 25
+          Top = 39
+          Width = 75
+          Caption = 'Вставить'
+          OnClick = btnBlockInsert1Click
+          TabOrder = 4
+        end
+      end
+      object TabSheet4: TTabSheet
+        Caption = 'Импорт'
+        ClientHeight = 74
+        ClientWidth = 848
+        object btnImportBlock: TButton
+          Left = 11
+          Height = 25
+          Top = 7
+          Width = 96
+          Caption = 'Import Block'
+          OnClick = btnImportBlockClick
+          TabOrder = 0
+        end
+        object edtBlockName: TEdit
+          Left = 123
+          Height = 23
+          Top = 9
+          Width = 176
+          TabOrder = 1
+          Text = 'Test'
+        end
+      end
+      object TabSheet5: TTabSheet
+        Caption = 'Выбор'
+        ClientHeight = 74
+        ClientWidth = 848
+        object cbAAINSIDE: TCheckBox
+          Left = 27
+          Height = 19
+          Top = 39
+          Width = 122
+          Caption = 'Внутри периметра'
+          OnChange = cbAAINSIDEChange
+          TabOrder = 0
+        end
+        object cbAABASEPOINT: TCheckBox
+          Left = 187
+          Height = 19
+          Top = 15
+          Width = 97
+          Caption = 'Базовая точка'
+          Checked = True
+          OnChange = cbAABASEPOINTChange
+          State = cbChecked
+          TabOrder = 1
+        end
+        object cbAAVERTEX: TCheckBox
+          Left = 187
+          Height = 19
+          Top = 39
+          Width = 118
+          Caption = 'Вершина объекта'
+          Checked = True
+          OnChange = cbAAVERTEXChange
+          State = cbChecked
+          TabOrder = 2
+        end
+        object cbAABORDER: TCheckBox
+          Left = 27
+          Height = 19
+          Top = 15
+          Width = 113
+          Caption = 'Граница объекта'
+          Checked = True
+          OnChange = cbAABORDERChange
+          State = cbChecked
+          TabOrder = 3
+        end
+      end
+    end
+  end
+  object pnlRight: TPanel
+    Left = 688
+    Height = 561
+    Top = 104
+    Width = 170
+    Align = alRight
+    ClientHeight = 561
+    ClientWidth = 170
+    TabOrder = 1
+    object Memo1: TMemo
+      Left = 1
+      Height = 559
+      Top = 1
+      Width = 168
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+  object pnlBox: TPanel
+    Left = 0
+    Height = 561
+    Top = 104
+    Width = 688
+    Align = alClient
+    TabOrder = 2
+    OnClick = pnlBoxClick
+  end
+end
